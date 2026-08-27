@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ESSENZA | Skincare & Beleza</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            background: #fff8fa;
+            color: #5c4148;
+        }
+
+        :root {
+            --rosa-claro: #fbdce5;
+            --rosa-medio: #f4b8c9;
+            --rosa: #e89aae;
+            --rosa-escuro: #c96f88;
+            --rosa-muito-claro: #fff1f5;
+            --branco: #ffffff;
+            --texto: #5c4148;
+            --texto-claro: #866b73;
+        }
+
+        /* =========================
+           HEADER
+        ========================== */
+
+        header {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(201, 111, 136, 0.08);
+        }
+
+        .logo {
+            font-family: "DM Serif Display", serif;
+            font-size: 32px;
+            color: var(--rosa-escuro);
+            letter-spacing: 2px;
+        }
+
+        nav {
+            display: flex;
+            gap: 10px;
+        }
+
+        nav button {
+            border: none;
+            background: transparent;
+            color: var(--texto);
+            font-family: "Poppins", sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            padding: 10px 16px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        nav button:hover,
+        nav button.active {
+            background: var(--rosa-claro);
+            color: var(--rosa-escuro);
+        }
+
+        /* =========================
+           PÁGINAS
+        ========================== */
+
+        .page {
+            display: none;
+            min-height: calc(100vh - 80px);
+            animation: aparecer 0.5s ease;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        @keyframes aparecer {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* =========================
+           HOME
+        ========================== */
+
+        .hero {
+            min-height: 650px;
+            padding: 70px 8%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+
+            background:
+                radial-gradient(circle at 85% 20%, #fbdce5 0, transparent 25%),
+                linear-gradient(135deg, #fff8fa, #ffeef3);
+        }
+
+        .hero-text {
+            max-width: 600px;
+        }
+
+        .hero-small {
+            color: var(--rosa-escuro);
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-family: "DM Serif Display", serif;
+            font-size: clamp(60px, 9vw, 110px);
+            line-height: 0.95;
+            color: #c96f88;
+            margin-bottom: 25px;
+        }
+
+        .hero h2 {
+            font-family: "DM Serif Display", serif;
+            font-size: 34px;
+            font-weight: normal;
+            margin-bottom: 20px;
+            color: var(--texto);
+        }
+
+        .hero p {
+            max-width: 530px;
+            color: var(--texto-claro);
+            line-height: 1.8;
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            border: none;
+            background: var(--rosa-escuro);
+            color: white;
+            padding: 14px 28px;
+            border-radius: 30px;
+            font-family: "Poppins", sans-serif;
+            font-weight: 500;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #b95f78;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(201, 111, 136, 0.25);
+        }
+
+        .hero-image {
+            width: 400px;
+            height: 480px;
+            border-radius: 200px 200px 30px 30px;
+            background: linear-gradient(145deg, #f8cbd7, #f3aabd);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            box-shadow: 20px 20px 0 #fce5eb;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* =========================
+           SOBRE
+        ========================== */
+
+        .intro {
+            padding: 80px 8%;
+            text-align: center;
+            background: white;
+        }
+
+        .section-title {
+            font-family: "DM Serif Display", serif;
+            font-size: 45px;
+            color: var(--rosa-escuro);
+            margin-bottom: 15px;
+        }
+
+        .section-subtitle {
+            max-width: 650px;
+            margin: 0 auto 45px;
+            color: var(--texto-claro);
+            line-height: 1.8;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .feature {
+            background: var(--rosa-muito-claro);
+            padding: 35px 25px;
+            border-radius: 25px;
+            transition: 0.3s;
+        }
+
+        .feature:hover {
+            transform: translateY(-8px);
+        }
+
+        .feature-icon {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .feature h3 {
+            margin-bottom: 10px;
+            color: var(--rosa-escuro);
+        }
+
+        .feature p {
+            color: var(--texto-claro);
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        /* =========================
+           PASSO A PASSO
+        ========================== */
+
+        .routine {
+            padding: 80px 8%;
+            background: #fff8fa;
+        }
+
+        .routine-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .steps {
+            max-width: 900px;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .step {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            background: white;
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(201, 111, 136, 0.08);
+            transition: 0.3s;
+        }
+
+        .step:hover {
+            transform: translateX(8px);
+        }
+
+        .number {
+            min-width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            background: var(--rosa-claro);
+            color: var(--rosa-escuro);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: "DM Serif Display", serif;
+            font-size: 28px;
+        }
+
+        .step h3 {
+            color: var(--rosa-escuro);
+            margin-bottom: 5px;
+        }
+
+        .step p {
+            color: var(--texto-claro);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .tip {
+            max-width: 900px;
+            margin: 35px auto 0;
+            padding: 25px;
+            border-radius: 20px;
+            background: var(--rosa-claro);
+            color: #704c57;
+            line-height: 1.7;
+        }
+
+        /* =========================
+           PRODUTOS
+        ========================== */
+
+        .products {
+            padding: 80px 8%;
+            background: white;
+        }
+
+        .products-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .product-grid {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .product-card {
+            border: 1px solid #f5dce3;
+            border-radius: 25px;
+            padding: 25px;
+            background: #fffafb;
+            transition: 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 10px 30px rgba(201, 111, 136, 0.12);
+        }
+
+        .product-image {
+            height: 180px;
+            border-radius: 20px;
+            background: var(--rosa-muito-claro);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 20px;
+        }
+
+        .skin-type {
+            display: inline-block;
+            background: var(--rosa-claro);
+            color: var(--rosa-escuro);
+            font-size: 11px;
+            padding: 6px 12px;
+            border-radius: 20px;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .product-card h3 {
+            color: var(--texto);
+            margin-bottom: 10px;
+        }
+
+        .product-card p {
+            font-size: 14px;
+            line-height: 1.7;
+            color: var(--texto-claro);
+        }
+
+        /* =========================
+           RODAPÉ
+        ========================== */
+
+        footer {
+            background: #f5c7d3;
+            color: #704c57;
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        footer .footer-logo {
+            font-family: "DM Serif Display", serif;
+            font-size: 30px;
+            color: #a9536b;
+            margin-bottom: 8px;
+        }
+
+        footer p {
+            font-size: 13px;
+        }
+
+        /* =========================
+           RESPONSIVO
+        ========================== */
+
+        @media (max-width: 850px) {
+
+            header {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding-top: 50px;
+            }
+
+            .hero-image {
+                width: 280px;
+                height: 350px;
+            }
+
+            .features,
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .step {
+                align-items: flex-start;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .logo {
+                font-size: 27px;
+            }
+
+            nav button {
+                font-size: 12px;
+                padding: 8px 10px;
+            }
+
+            .hero h1 {
+                font-size: 65px;
+            }
+
+            .hero h2 {
+                font-size: 27px;
+            }
+
+            .section-title {
+                font-size: 37px;
+            }
+
+            .number {
+                min-width: 50px;
+                height: 50px;
+                font-size: 22px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+         MENU
+    ========================== -->
+
+    <header>
+
+        <div class="logo">
+            ESSENZA
+        </div>
+
+        <nav>
+
+            <button
+                class="nav-btn active"
+                onclick="mostrarPagina('home', this)"
+            >
+                Início
+            </button>
+
+            <button
+                class="nav-btn"
+                onclick="mostrarPagina('rotina', this)"
+            >
+                Passo a passo
+            </button>
+
+            <button
+                class="nav-btn"
+                onclick="mostrarPagina('produtos', this)"
+            >
+                Produtos
+            </button>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =========================
+         HOME
+    ========================== -->
+
+    <main id="home" class="page active">
+
+        <section class="hero">
+
+            <div class="hero-text">
+
+                <div class="hero-small">
+                    Skincare • Beleza • Essência
+                </div>
+
+                <h1>
+                    ESSENZA
+                </h1>
+
+                <h2>
+                    Sua pele merece cuidado.
+                </h2>
+
+                <p>
+                    Descubra uma rotina de skincare simples, delicada
+                    e feita para valorizar a beleza natural da sua pele.
+                    Na ESSENZA, acreditamos que cuidar de si também
+                    é uma forma de amor próprio.
+                </p>
+
+                <button
+                    class="btn"
+                    onclick="mostrarPagina('rotina', document.querySelectorAll('.nav-btn')[1])"
+                >
+                    Conheça sua rotina
+                </button>
+
+            </div>
+
+            <div class="hero-image">
+                <img src="modelo.jfif" alt="Skincare ESSENZA">
+            </div>
+
+        </section>
+
+
+        <section class="intro">
+
+            <h2 class="section-title">
+                A essência do cuidado
+            </h2>
+
+            <p class="section-subtitle">
+                Pequenos momentos de autocuidado podem transformar
+                a maneira como você se sente. Crie uma rotina,
+                conheça sua pele e cuide dela todos os dias.
+            </p>
+
+            <div class="features">
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+                        
+                    </div>
+
+                    <h3>
+                        Limpeza
+                    </h3>
+
+                    <p>
+                        Comece sua rotina removendo suavemente
+                        sujeira, oleosidade e impurezas da pele.
+                    </p>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+                        💧
+                    </div>
+
+                    <h3>
+                        Hidratação
+                    </h3>
+
+                    <p>
+                        Mantenha a pele hidratada para ajudar
+                        a preservar sua maciez e luminosidade.
+                    </p>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+                        ☀️
+                    </div>
+
+                    <h3>
+                        Proteção
+                    </h3>
+
+                    <p>
+                        O protetor solar é um dos passos mais
+                        importantes de uma rotina durante o dia.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         ROTINA
+    ========================== -->
+
+    <main id="rotina" class="page">
+
+        <section class="routine">
+
+            <div class="routine-header">
+
+                <h2 class="section-title">
+                    Sua rotina ESSENZA
+                </h2>
+
+                <p class="section-subtitle">
+                    Uma rotina básica pode ser simples.
+                    Siga estes passos para criar seu ritual
+                    diário de cuidados.
+                </p>
+
+            </div>
+
+
+            <div class="steps">
+
+                <div class="step">
+
+                    <div class="number">
+                        1
+                    </div>
+
+                    <div>
+                        <h3>
+                            Lave seu rosto
+                        </h3>
+
+                        <p>
+                            Use um sabonete facial adequado para
+                            sua pele e lave o rosto delicadamente.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="step">
+
+                    <div class="number">
+                        2
+                    </div>
+
+                    <div>
+                        <h3>
+                            Seque com cuidado
+                        </h3>
+
+                        <p>
+                            Utilize uma toalha limpa e macia.
+                            Evite esfregar a pele.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="step">
+
+                    <div class="number">
+                        3
+                    </div>
+
+                    <div>
+                        <h3>
+                            Aplique um hidratante
+                        </h3>
+
+                        <p>
+                            Escolha um hidratante adequado ao
+                            seu tipo de pele e aplique suavemente.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="step">
+
+                    <div class="number">
+                        4
+                    </div>
+
+                    <div>
+                        <h3>
+                            Use protetor solar
+                        </h3>
+
+                        <p>
+                            Pela manhã, finalize sua rotina com
+                            protetor solar e reaplique conforme
+                            as orientações do produto.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="step">
+
+                    <div class="number">
+                        5
+                    </div>
+
+                    <div>
+                        <h3>
+                            Cuide da sua pele à noite
+                        </h3>
+
+                        <p>
+                            Antes de dormir, remova maquiagem,
+                            limpe o rosto e hidrate novamente.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="tip">
+                💗 <strong>Dica ESSENZA:</strong>
+                Não é necessário ter dezenas de produtos.
+                Uma rotina consistente e adequada às necessidades
+                da sua pele é mais importante.
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         PRODUTOS
+    ========================== -->
+
+    <main id="produtos" class="page">
+
+        <section class="products">
+
+            <div class="products-header">
+
+                <h2 class="section-title">
+                    Encontre seu cuidado
+                </h2>
+
+                <p class="section-subtitle">
+                    Algumas sugestões para diferentes necessidades
+                    de pele. Sempre confira a composição e escolha
+                    produtos adequados para você.
+                </p>
+
+            </div>
+
+
+            <div class="product-grid">
+
+                <!-- PRODUTO 1 -->
+
+                <div class="product-card">
+
+                    <div class="product-image">
+                        <img src="nivea.jfif" alt="Creme NIVEA">
+                    </div>
+
+                    <span class="skin-type">
+                        PELE RESSECADA
+                    </span>
+
+                    <h3>
+                        Creme NIVEA
+                    </h3>
+
+                    <p>
+                        Para peles que precisam de mais hidratação,
+                        um creme hidratante pode ajudar a manter
+                        a sensação de maciez e conforto.
+                    </p>
+
+                </div>
+
+
+                <!-- PRODUTO 2 -->
+
+                <div class="product-card">
+
+                    <div class="product-image">
+                        <img src="neutrogena.jfif" alt="Hidratante em gel Neutrogena">
+                    </div>
+
+                    <span class="skin-type">
+                        PELE OLEOSA
+                    </span>
+
+                    <h3>
+                        Hidratante em gel Neutrogena
+                    </h3>
+
+                    <p>
+                        Texturas leves e em gel podem ser uma boa
+                        opção para quem prefere hidratação sem
+                        sensação pesada na pele.
+                    </p>
+
+                </div>
+
+
+                <!-- PRODUTO 3 -->
+
+                <div class="product-card">
+
+                    <div class="product-image">
+                        <img src="cerave.jfif" alt="Sabonete facial CeraVe">
+                    </div>
+
+                    <span class="skin-type">
+                        TODOS OS TIPOS
+                    </span>
+
+                    <h3>
+                        Sabonete facial suave CeraVe
+                    </h3>
+
+                    <p>
+                        Prefira produtos de limpeza desenvolvidos
+                        para o rosto e que sejam compatíveis com
+                        as necessidades da sua pele.
+                    </p>
+
+                </div>
+
+
+                <!-- PRODUTO 4 -->
+
+                <div class="product-card">
+
+                    <div class="product-image">
+                        <img src="principia.jfif" alt="Protetor solar Principia">
+                    </div>
+
+                    <span class="skin-type">
+                        USO DIÁRIO
+                    </span>
+
+                    <h3>
+                        Protetor solar Principia
+                    </h3>
+
+                    <p>
+                        O protetor solar deve fazer parte da rotina
+                        durante o dia. Escolha um produto adequado
+                        para seu rosto e siga as instruções da embalagem.
+                    </p>
+
+                </div>
+
+
+                <!-- PRODUTO 5 -->
+
+                <div class="product-card">
+
+                    <div class="product-image">
+                        <img src="sephoraa.jfif" alt="Produtos suaves para pele sensível">
+                    </div>
+
+                    <span class="skin-type">
+                        PELE SENSÍVEL
+                    </span>
+
+                    <h3>
+                        Produtos suaves
+                    </h3>
+
+                    <p>
+                        Para peles sensíveis, procure fórmulas
+                        desenvolvidas para esse tipo de pele e
+                        evite produtos que causem desconforto.
+                    </p>
+
+                </div>
+
+
+                <!-- PRODUTO 6 -->
+
+                <div class="product-card">
+
+                    <div class="product-image">
+                        <img src="sephora.jfif" alt="Máscara facial">
+                    </div>
+
+                    <span class="skin-type">
+                        AUTOCUIDADO
+                    </span>
+
+                    <h3>
+                        Máscara facial
+                    </h3>
+
+                    <p>
+                        Uma máscara facial pode ser incorporada
+                        ocasionalmente à rotina, desde que seja
+                        adequada às necessidades da sua pele.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <div class="footer-logo">
+            ESSENZA
+        </div>
+
+        <p>
+            Sua beleza começa no cuidado. 🌸
+        </p>
+
+        <p style="margin-top: 10px;">
+            © 2026 ESSENZA — Skincare & Autocuidado
+        </p>
+
+    </footer>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+        function mostrarPagina(pagina, botao) {
+
+            const paginas = document.querySelectorAll(".page");
+
+            paginas.forEach(function(item) {
+                item.classList.remove("active");
+            });
+
+            document.getElementById(pagina).classList.add("active");
+
+            const botoes = document.querySelectorAll(".nav-btn");
+
+            botoes.forEach(function(item) {
+                item.classList.remove("active");
+            });
+
+            if (botao) {
+                botao.classList.add("active");
+            }
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        }
+
+    </script>
+
+</body>
+</html>
